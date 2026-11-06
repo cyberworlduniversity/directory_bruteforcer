@@ -160,3 +160,48 @@ If this tool helped you, please ⭐ **star the repo** on GitHub!
 ```
 https://github.com/hemanathan115
 ```
+
+
+## Repository Quick Start
+
+Clone the canonical repository:
+
+```bash
+git clone https://github.com/cyberworlduniversity/directory_bruteforcer.git
+cd directory_bruteforcer
+```
+
+### Requirements and installation
+
+- Python 3.10+ is recommended.
+- No third-party packages are required by the documented project entry point.
+
+### Run
+
+```bash
+python directory_bruteforcer.py
+```
+
+For scripts that expose command-line options, use `python directory_bruteforcer.py --help` to inspect the options implemented in this version. Begin with sample or non-sensitive input.
+
+### Validate source syntax
+
+```bash
+python -m compileall -q .
+```
+
+Use only against web applications you own or have explicit written permission to test.
+
+### Program flow
+
+```mermaid
+flowchart TD
+    A[Start] --> B[Load input and settings]
+    B --> C{Input valid?}
+    C -- No --> D[Show validation error]
+    C -- Yes --> E[Run directory bruteforcer checks]
+    E --> F[Evaluate results]
+    F --> G[Display or save report]
+    G --> H[Exit]
+    D --> H
+```
