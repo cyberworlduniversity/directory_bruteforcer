@@ -1,5 +1,15 @@
 # 📂 Directory Bruteforcer
 
+
+## Get this repository
+
+Clone the current project (this repository's canonical GitHub URL), then follow the installation and usage steps below.
+
+```bash
+git clone https://github.com/cyberworlduniversity/directory_bruteforcer.git
+cd directory_bruteforcer
+```
+
 > **Tool #14** in the Ethical Hacking Toolkit  
 > 👤 Author: **hemanathan115**  
 > 🔗 GitHub: [https://github.com/hemanathan115](https://github.com/hemanathan115)
