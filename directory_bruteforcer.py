@@ -88,9 +88,15 @@ def check_directory(base_url: str, word: str, timeout: int, extensions: list) ->
     for path in paths:
         full_url = f"{base_url}/{path}"
         try:
-            resp = requests.get(full_url, timeout=timeout, allow_redirects=False,
-                                headers={"User-Agent": "Mozilla/5.0 DirBruteforcer/1.0"})
-            code = resp.status_code
+            with requests.get(
+                full_url,
+                timeout=timeout,
+                allow_redirects=False,
+                stream=True,
+                headers={"User-Agent": "Mozilla/5.0 DirBruteforcer/1.0"},
+            ) as resp:
+                # Only the status code is needed; do not buffer arbitrary response bodies.
+                code = resp.status_code
             color, label = STATUS_INFO.get(code, (WHITE, f"[{code}]"))
             results.append((full_url, code, color, label))
         except requests.ConnectionError:
